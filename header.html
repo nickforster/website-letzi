@@ -12,13 +12,23 @@
 </head>
 <body>
     <header>
-
+        <div id="header-placeholder"></div>
+        <script>
+            $.get("header.html", function(data){
+                $("#header-placeholder").replaceWith(data);
+            });
+        </script>
     </header>
     <main>
 
     </main>
     <footer>
-
+        <div id="footer-placeholder"></div>
+        <script>
+            $.get("footer.html", function(data){
+                $("#footer-placeholder").replaceWith(data);
+            });
+        </script>
     </footer>
 </body>
 </html>
