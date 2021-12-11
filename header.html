@@ -1,34 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zunft zur Letzi</title>
-
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/footer.css">
-</head>
-<body>
-    <header>
-        <div id="header-placeholder"></div>
-        <script>
-            $.get("header.html", function(data){
-                $("#header-placeholder").replaceWith(data);
-            });
-        </script>
-    </header>
-    <main>
-
-    </main>
-    <footer>
-        <div id="footer-placeholder"></div>
-        <script>
-            $.get("footer.html", function(data){
-                $("#footer-placeholder").replaceWith(data);
-            });
-        </script>
-    </footer>
-</body>
-</html>
+<div class="navbar">
+    <div class="navbar-containter">
+        <div class="navbar-title"><a href="#">Home</a></div>
+    </div>
+    <div class="navbar-containter">
+        <div class="navbar-title">Letzi</div>
+        <div class="navbar-dropdown">
+            <div class="navbar-dropdown-content"><a href="#">Zünfter</a></div>
+            <div class="navbar-dropdown-content"><a href="#">Zehntenabgabe</a></div>
+            <div class="navbar-dropdown-content"><a href="#">Fotogalerie</a></div>
+        </div>
+    </div>
+    <div class="navbar-containter">
+        <div class="navbar-title">Zunfthaus</div>
+        <div class="navbar-dropdown">
+            <div class="navbar-dropdown-content"><a href="#">Genossenschaft</a></div>
+            <div class="navbar-dropdown-content"><a href="#">Restaurant</a></div>
+        </div>
+    </div>
+    <div class="navbar-containter">
+        <div class="navbar-title">Historie</div>
+        <div class="navbar-dropdown">
+            <div class="navbar-dropdown-content"><a href="#">Letzi</a></div>
+            <div class="navbar-dropdown-content"><a href="#">Zünfte</a></div>
+            <div class="navbar-dropdown-content"><a href="#">Zunfthaus</a></div>
+            <div class="navbar-dropdown-content"><a href="#">Zürich</a></div>
+            <div class="navbar-dropdown-content"><a href="#">Altstetten</a></div>
+            <div class="navbar-dropdown-content"><a href="#">Albisrieden</a></div>
+        </div>
+    </div>
+    <div class="navbar-containter">
+        <div class="navbar-title"><a href="#">Intern</a></div>
+    </div>
+</div>
