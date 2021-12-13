@@ -1,0 +1,55 @@
+:root{
+    --letziBlau: #0066CC;
+    --letziGelb: #FFCC33;
+}
+
+.navbar{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1rem;
+    background-color: var(--letziBlau);
+}
+.navbar-dropdown{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    background-color: var(--letziBlau);
+    border-top: 0.5rem solid transparent;
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.1);
+    
+    background-image: linear-gradient(var(--letziGelb), var(--letziGelb));
+    background-repeat: no-repeat;
+    background-size: 4px 0%;
+
+    transition: background-size 0.5s, opacity 0.5s;
+
+}
+.navbar-container:hover > .navbar-dropdown{
+    opacity: 1;
+    pointer-events: visible;
+    background-size: 4px 100%;
+}
+
+
+.navbar-dropdown a, .navbar-title, .navbar-title a{
+    color: white;
+    text-decoration: none;    
+    width: fit-content;
+
+    background-image: linear-gradient(var(--letziGelb), var(--letziGelb));
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    background-position: 0 calc(100% - 0px);
+
+    transition: background-size 0.3s ease-in-out;
+}
+.navbar-dropdown a:hover, .navbar-title a:hover{
+    background-size: 100% 2px;
+}
