@@ -9,20 +9,39 @@
     </div>
     <script>
         $(document).ready(function(){
+            //closes dropdown content inside initial dropdown, when clicked on hamburgerbutton
             $('#navbar-icon').click(function(){
                 $(this).toggleClass('active');
+                $('.navbar-container').removeClass('active')
+                $('.navbar-container').addClass('not-active')
             });
+
+            //opens and closes the initial dropdown on click of the hamburgerbutton
             $('#header-icons').click(function(){
                 $(this).toggleClass('active');
+            });
+
+            //opens and closes dropdown content inside the other dropdown on click
+            //closes all open dropdown contents of second dropdown, when other dropdown is clicked
+            $('.navbar-container').click(function(){
+                if ($(this).hasClass('not-active')) {
+                    $('.navbar-container.active').addClass('not-active');
+                    $('.navbar-container.active').removeClass('active');
+                    $(this).removeClass('not-active');
+                    $(this).addClass('active');
+                } else {
+                    $('.navbar-container.active').addClass('not-active');
+                    $('.navbar-container.active').removeClass('active');
+                }
             });
         });
     </script>
 </div>
 <div class="navbar">
-    <div class="navbar-container">
+    <div class="navbar-container not-active">
         <div class="navbar-title"><a href="#">Home</a></div>
     </div>
-    <div class="navbar-container">
+    <div class="navbar-container not-active">
         <div class="navbar-title">Letzi</div>
         <div class="navbar-dropdown">
             <a href="#" class="navbar-link">Zünfter</a>
@@ -30,14 +49,14 @@
             <a href="#" class="navbar-link">Fotogalerie</a>
         </div>
     </div>
-    <div class="navbar-container">
+    <div class="navbar-container not-active">
         <div class="navbar-title">Zunfthaus</div>
         <div class="navbar-dropdown">
             <a href="#" class="navbar-link">Genossenschaft</a>
             <a href="#" class="navbar-link">Restaurant</a>
         </div>
     </div>
-    <div class="navbar-container">
+    <div class="navbar-container not-active">
         <div class="navbar-title">Historie</div>
         <div class="navbar-dropdown">
             <a href="#" class="navbar-link">Letzi</a>
@@ -48,7 +67,7 @@
             <a href="#" class="navbar-link">Albisrieden</a>
         </div>
     </div>
-    <div class="navbar-container">
+    <div class="navbar-container not-active">
         <div class="navbar-title"><a href="#">Intern</a></div>
     </div>
 </div>
