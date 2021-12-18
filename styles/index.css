@@ -1,3 +1,9 @@
+:root{
+    --letziBlau: #0066CC;
+    --letziGelb: #FFCC33;
+    --letziBlauTransparent: rgba(00, 102, 204, 0.5);
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -11,7 +17,6 @@ body{
     margin: 0;
     padding: 0;
     object-fit: cover;
-    /* width: 98.7vw; */
     width: 100%;
     height: 100vh;
     z-index: 500;
