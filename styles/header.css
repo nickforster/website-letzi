@@ -1,13 +1,18 @@
 :root{
     --letziBlau: #0066CC;
     --letziGelb: #FFCC33;
+    --letziBlauTransparent: rgba(00, 102, 204, 0.5);
 }
 
 header{
-    background-color: var(--letziBlau);
+    position: fixed;
+    width: 100%;
+    height: auto;
+    /* background-color: var(--letziBlau); */
     display: flex;
     flex-direction: row;
     padding: 0.5rem;
+    z-index: 1000;
 }
 .navbar{
     position: relative;
@@ -16,7 +21,7 @@ header{
     justify-content: space-evenly;
     align-items: center;
     font-size: 25px;
-    padding: 1rem;
+    /* padding: 1rem; */
     background-color: var(--letziBlau);
     width: 100%;
     z-index: 100;
@@ -115,6 +120,47 @@ header{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    width: 5rem;
+    height: auto;
+}
+.navbar-logo{
+    height: 70px;
+    width: auto;
+    transition: all 0.4s;
+}
+@media (min-width: 600px){
+    header{
+        background-color: var(--letziBlauTransparent);
+    }
+    .navbar{
+        background-color: transparent;
+    }
+    .navbar-dropdown{
+        background-color: var(--letziBlauTransparent);
+    }
+    header.not-top{
+        background-color: var(--letziBlau);
+    }
+    header.not-top .navbar .navbar-container .navbar-dropdown{
+        background-color: var(--letziBlau);
+    }
+    header.not-top .header-icons a img{
+        height: 40px;
+        width: auto;
+        padding: 0;
+        transition: all 0.4s;
+    }
+    header.not-top{
+        height: auto;
+        padding: 0.5rem;
+        transition: all 0.4s;
+
+    }
+    header.to-top .navbar{
+        padding: 0 !important;
+    }
+    /* header-icons > navbar-logo
+    header-icons a img */
 }
 
 
@@ -124,9 +170,6 @@ header{
         flex-direction: column;
         width: 100%;
         background-color: transparent;
-    }
-    .navbar{
-        justify-content: space-between;
     }
     .header-icons{
         box-sizing: border-box;
@@ -140,6 +183,7 @@ header{
         display: block;
     }
     .navbar{
+        justify-content: space-between;
         width: 100%;
         padding: 1rem 0;
         pointer-events: none;
