@@ -139,7 +139,6 @@ table, th, td{
 }
 
 @media (max-width: 600px){
-    /* Grundlegend alles ändern */
     .inhalt-text{
         grid-template-columns: 1fr;
     }
