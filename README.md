@@ -1,2 +1,2 @@
 # Website-Letzi
-Websitet of Zunft zur Letzi
+Website of Zunft zur Letzi
