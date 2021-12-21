@@ -139,8 +139,14 @@ table, th, td{
 }
 
 @media (max-width: 600px){
+    .inhalt{
+        margin-left: 5%;
+    }
     .inhalt-text{
         grid-template-columns: 1fr;
+    }
+    .inhalt-text div{
+        width: fit-content;
     }
     .sechselaeuten{
         grid-template-columns: 1fr;
@@ -151,6 +157,9 @@ table, th, td{
     }
     .links-grid-container{
         grid-template-columns: 1fr !important;
+    }
+    .countdown-inhalt{
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 @media (max-width: 800px){
