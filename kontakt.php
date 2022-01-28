@@ -26,13 +26,6 @@
         </script>
     </header>
     <main>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur natus quod dolores sapiente ea quis delectus minus, corrupti doloribus quibusdam possimus nihil fugiat architecto nulla obcaecati inventore nobis rem officia!
-            Ea ut tempora illum unde nesciunt facilis inventore voluptatum atque doloremque eos dolore sit, aliquam adipisci eum doloribus corrupti perspiciatis vitae commodi placeat temporibus eaque iste nam! Reiciendis, ea odit?
-            Mollitia repellat vero, et ratione molestiae, minima fugiat est modi, quisquam doloribus voluptatum in veritatis consequatur. Quos deleniti explicabo commodi delectus impedit ea optio quia magni ab laboriosam. Ex, illum.
-            Accusantium in praesentium saepe, maxime vero hic sapiente nemo nostrum labore voluptate odio dignissimos, nulla facere? Eaque libero aliquam et, itaque veniam nihil consequatur, esse culpa modi sequi neque saepe?
-            Nulla doloribus numquam minima. At, commodi pariatur! Incidunt ad quo saepe quod earum dignissimos numquam accusamus rerum quis, aliquid modi reprehenderit sint natus amet! Distinctio, natus commodi? Exercitationem, assumenda harum.
-        </p>
         <?php
         $name = $vorname = $mail = $betreff = $nachricht = $ausgabe = '';
         $nameFehler = $vornameFehler = $mailFehler = $betreffFehler = '';
@@ -86,7 +79,7 @@
                     $betreffFehler = '';
                 }
             }
-            $nachricht = $_POST['nachricht'];
+            $nachricht = test_input($_POST['nachricht']);
         }
 
         if (isset($_POST['senden']) && $nameFehler === '' && $vornameFehler === '' && $mailFehler === '' && $betreffFehler == '') {
@@ -97,7 +90,7 @@
             mail($zielMail, $betreff, $ausgabe, "From: $mail");
             $name = $vorname = $mail = $betreff = $nachricht = '';
             $nameFehler = $vornameFehler = $mailFehler = $betreffFehler = '';
-            echo "<style>.ausgabebestaetigung {display: block !important;} .kontaktformular {display: none;}</style>";
+            echo "<style>.ausgabebestaetigung {display: flex !important;} .kontaktformular {display: none;}</style>";
         }
         ?>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" accept-charset="utf-8" class="kontaktformular">
@@ -119,9 +112,11 @@
                 </div>
                 <div>
                     <label for="nachricht">Inhalt der Nachricht<br></label>
-                    <textarea name="nachricht" id="nachricht" cols="30" rows="10"><?php echo $nachricht?></textarea>
+                    <textarea name="nachricht" id="nachricht" cols="30" rows="10" style="resize: vertical;"><?php echo $nachricht?></textarea>
                 </div>
-                <input type="submit" id="senden" name="senden" value="Senden">
+                <div>
+                    <input type="submit" id="senden" name="senden" value="Senden">
+                </div>
                 <p>Pflichtfelder sind mit einem * markiert</p>
         </form>
         <div class="ausgabebestaetigung">
